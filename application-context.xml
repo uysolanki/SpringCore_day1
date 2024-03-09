@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+    xmlns:context="http://www.springframework.org/schema/context"
+    xsi:schemaLocation="http://www.springframework.org/schema/beans
+    http://www.springframework.org/schema/beans/spring-beans.xsd
+    http://www.springframework.org/schema/context
+    http://www.springframework.org/schema/context/spring-context.xsd">
+    
+    
+    <bean id="e1" class="com.gl.model.Engine">
+    <constructor-arg value="102"></constructor-arg>
+    <constructor-arg value="Honda Diesel"></constructor-arg>
+    <constructor-arg value="12"></constructor-arg>
+    <constructor-arg value="1500"></constructor-arg>
+    </bean>
+    
+    <bean id="myEngine" class="com.gl.model.Engine">
+    <constructor-arg value="102"></constructor-arg>
+    <constructor-arg value="Honda Diesel"></constructor-arg>
+    <constructor-arg value="18"></constructor-arg>
+    <constructor-arg value="2500"></constructor-arg>
+    </bean>
+    
+    <bean id="g1" class="com.gl.model.Gear">
+    <property name="gearID">
+    <value>201</value>
+    </property>
+    
+    <property name="gearMfgName">
+    <value>Prime Auto</value>
+    </property>
+    
+    <property name="gearType">
+    <value>Automatic</value>
+    </property>
+    
+    </bean>
+    
+    <bean id="c1"  class="com.gl.model.Car" autowire="byName">
+    <property name="carID">
+    <value>301</value>
+    </property>
+    <property name="modelName">
+    <value>Q3</value>
+    </property>
+    <property name="mfgName">
+    <value>Audi</value>
+    </property>
+    <property name="price">
+    <value>1000</value>
+    </property>
+    
+    <!--  <property name="myEngine" ref="e1"></property>
+    <property name="myGear" ref="g1"></property> -->
+    
+    </bean>
+    
+    <bean id="p1" class="com.gl.model.Player">
+    	<property name="pno">
+    	<value>18</value>
+    	</property>
+    	
+    	<property name="pname">
+    	<value>Virat</value>
+    	</property>
+    	
+    	<property name="teams">
+    	<list>
+				<value>Delhi</value>
+				<value>India</value>
+				<value>RCB</value>
+			</list>
+    	
+    	</property>
+    	
+    	<property name="captains">
+    	<list>
+				<value>Dhoni</value>
+				<value>Rohit</value>
+				<value>Duplesis</value>
+			</list>
+    	
+    	</property>
+    	
+    	<property name="centuries">
+    	<map>
+			<entry key="ODI" value="52"></entry>
+			<entry key="T20i" value="1"></entry>
+			<entry key="TEST" value="29"></entry>
+		</map>
+    	
+    	</property>
+    </bean>
+    
+    </beans>
